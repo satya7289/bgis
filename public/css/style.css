@@ -1,0 +1,246 @@
+body{
+    font-family: 'Montserrat';
+    padding: 0;
+    background-color: #F3F3F3;
+}
+
+.base-color{
+    background-color: #ec3136 !important;
+}
+
+.sup-color{
+    background-color: #6E6E6E;
+}
+
+.bgis-width{
+    width:90%;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.links a{
+    text-decoration: none;
+}
+
+.links a:hover{
+    text-decoration: underline;
+}
+
+.base-color-opacity{
+    background-color: rgba(236, 49, 54, 0.5) !important;
+}
+
+.text-color{
+    color: #ec3136 !important; 
+}
+
+p{
+    font-weight: 500 !important;
+}
+
+h1, h2, h3 h4, h5, h6{
+    font-family: 'Montserrat';
+    font-weight: 600 !important;
+}
+
+.primary-navigation{
+    background-color: #6E6E6E !important;
+    color: white !important;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.w3-bar-item{
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+.pages-hero h1{
+    color: white;
+    font-size: 4.7vw;
+    font-weight: 500;
+}
+
+.pages-hero .header-style{
+    height:100%;
+    right:10.5%;
+}
+
+.hero{
+    background-color: #ec3136;
+}
+
+.home-slider{
+    overflow: hidden !important;
+}
+
+.home-q{
+    z-index: 11;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 1 !important;
+    background-color: rgba(236, 49 54, 0.5);
+}
+
+.breadcrumbs a{
+    text-decoration: none;
+    color: #ec3136;
+}
+
+.breadcrumbs a:hover{
+    text-decoration: underline;
+}
+
+.admissions-home-text{
+    padding-top: 16px;
+}
+
+.admissions-home-text h1{
+    font-size: 300%;
+}
+
+.admissions-home-text p{
+    text-align: justify;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.home-about-pic{
+    padding: 32px 32px 16px 32px;
+}
+
+.home-about-pic > img{
+    border-radius: 0 0 100px 0;
+    border: 2px solid #ec3136;
+}
+
+.admissions-home-contact{
+    padding-top: 32px;
+}
+
+.admissions-home-contact-form{
+    width: 80%;
+    background-color: #ec3136;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+.hu{
+    padding-top: 64px;
+    text-align: center;
+}
+
+.hu-images{
+    padding: 32px 16px 0 16px;
+}
+
+.home-special ul{
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.footersec{
+    padding: 48px 32px;
+}
+
+.footer{
+    margin-top: 50px;
+}
+
+.footerlinks a{
+    text-decoration: none;
+}
+.footerlinks a:hover{
+    text-decoration: underline;
+}
+
+
+/* TYPOGRAPHY */
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+.plate {
+  width: 410px;
+  margin: 10% auto;
+}
+.script {
+  font-family: "Seaweed Script";
+  color: black;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  margin:0;
+}
+.script span {
+    background-color: #F3F3F3;
+    padding: 0 0.3em;
+}
+.script:before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:-1;
+  top: 50%;
+  width: 100%;
+  border-bottom: 3px solid #ec3136;
+}
+
+.letters {
+    border-radius: 15px;
+}
+
+/* ABOUT */
+.fac-img{
+    width: 70%;
+    height: 120px;
+    overflow: hidden;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .achievements-about li{
+        font-size: 10px;
+    }
+
+    .achievements-about h4{
+        font-size: 14px;
+    }
+}
+
+.achievements-about ul{
+    padding: 0 2px 0 22px;;
+}
+
+@media only screen and (max-width: 600px) {
+    .achievements-about li{
+        font-size: 10px;
+    }
+
+    .achievements-about h4{
+        font-size: 12px;
+    }
+}
+
+.w3-admin{
+    background-color: #7d97a5 !important;
+}
+
+
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
