@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+#RewriteEngine On 
+#RewriteCond %{SERVER_PORT} 80
+#RewriteCond %{HTTP_HOST} ^(www\.)?newbgis.org.com\/initiatetransfer
+#RewriteRule ^(.*)$ https:\/\/newbgis\.org\/initiatetransfer/$1 [R,L]
+
