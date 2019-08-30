@@ -1,0 +1,713 @@
+
+/*
+ * Events Calendar ------------------------
+ */
+ 
+#events{
+	width: 459px;
+padding: 14px;
+background: #fff;
+box-shadow: #d6d6ce 0 0 5px;
+}
+
+/* Grid View Header */
+
+#events-calendar-header{
+
+}
+#key{
+	float:right;	
+}
+#key li{
+	float:left;
+	color:#a8a39b;
+	font:normal 400 10px/16px 'Lato', Arial, Helvetica, sans-serif;	
+	text-transform:uppercase;	
+}
+#key li ul{
+	float:right;
+	width:210px;	
+}
+#key li li{
+	text-transform:capitalize;
+	float:left;
+	width:105px;	
+}
+#key li li a, #key li li a:visited{
+	color:#a8a39b;
+}
+#key li li a:hover{
+	color:#433d33;
+}
+#key li.key-all{
+	width:100%;
+	border-top:#e5e2de 1px solid;
+	margin:9px 0 -9px 0;
+}
+#key li.key-all span{
+	position:relative;
+	top:-10px;
+	margin:2px 0 0 0;	
+}
+#key li.key-all a{
+	top:-10px;
+	margin:0;
+	position:relative;
+	padding:0 10px 0 4px;
+	background:#fff;	
+}
+#key span{
+	float:left;
+	width:7px;
+	height:7px;
+	margin:2px 4px 0 0;
+	border:3px solid;
+	-webkit-border-radius: 7px;	
+	-moz-border-radius: 7px;	
+	-o-border-radius: 7px;	
+	border-radius: 7px;	
+}
+#key li.key-school-events span{
+	border-color:#f9ebec;
+	background:#bf1e2e;
+}
+#key li.key-sports-events span{
+	border-color:#f5f6f0;
+	background:#909f5b;
+}
+#key li.key-music-events span{
+	border-color:#f9f5eb;
+	background:#bf901e;
+}
+#key li.key-open-days span{
+	border-color:#f9f1eb;
+	background:#bf621e;
+}
+#key li.key-other span{
+	border-color:#e9efed;
+	background:#92ada7;
+}
+#key li.key-cancelled span{
+	border-color:#e9e8e6;
+	background:#928c83;
+}
+#key li.key-admissions span{
+	border-color:#e8e2ef;
+	background:#897b9a;
+}
+#key li.key-trips span{
+	border-color:#e7e7f4;
+	background:#838fb2;
+}
+#key li.key-all span{
+	border-color:#e5e2de;
+	background:#fff;
+}
+#key li.key-drama-events span{
+	border-color:#f2e4f1;
+	background:#bd93b9;
+}
+#key li.key-art-events span{
+	border-color:#efecd7;
+	background:#cdc15f;
+}
+
+#month-nav{
+	display:block;
+	margin:0 auto;
+	
+	width:336px;
+	height:55px;
+	background:#fff url('../images/BG-calendar-nav.png') no-repeat bottom center;	
+}
+#month-nav p{
+	display:block;
+	width:70%;
+	text-align:center;
+	margin:0 auto;
+	font: normal normal 28px/49px "Copse", Georgia, "Times New Roman", Times, serif;	
+}
+#month-nav #prev-month{
+	float:left;
+	width:15%;	
+}
+#month-nav #next-month{
+	float:right;
+	width:15%;	
+}
+#month-nav #prev-month a, #month-nav #next-month a{
+	display:block;
+	height:50px;
+	width:100%;
+	overflow:hidden;
+	text-indent:-999em;
+	background:#fff url('../images/BG-calendar-nav-arrows.png');
+	background-repeat:no-repeat;
+}
+#month-nav #prev-month a, #month-nav #prev-month a:visited{
+	background-position:0 -150px;
+}
+#month-nav #prev-month a:hover{
+	background-position:-2px -100px;
+}
+#month-nav #next-month a, #month-nav #next-month a:visited{
+	background-position:0 -50px;
+}
+#month-nav #next-month a:hover{
+	background-position:2px 0;
+}
+#ical, #ical:visited{
+	float:left;
+	padding-left:20px;
+	display:block;	
+	font-size:13px;
+	color:#a8a39b;
+	background:#fff url('../images/BG-calendar-ical.png') no-repeat left -15px;
+}
+#ical:hover{
+	background-position:left 2px;
+	color:#908b80;
+}
+
+/* The Grid View */
+
+#events .tec-calendar{
+	margin:0;
+	clear:both;
+	border-collapse:collapse;
+	border:1px solid #e5e2de;
+}
+#events .tec-calendar th{
+	height:37px;
+	width:250px;	
+	text-align:center;
+	background:#f7f6f5;
+	color:#928c83;
+	font: normal 300 16px/37px "Lato", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	text-shadow: 1px 1px 0 #e5e2de;
+	border:1px solid #e5e2de;
+}
+.tec-calendar td {
+	height: 45px;
+	width:13.98%;
+	color: #114B7D;
+	vertical-align: top;
+	border:1px solid #e5e2de;
+	padding:0 0 0 0.3%;
+}
+.tec-calendar td.tec-past{
+	background: url('../images/BG-calendar-expired.png');	
+}
+.tec-calendar td.tec-othermonth{
+	background: #fdfcfc url('../images/BG-calendar-expired.png');	
+}
+.tec-calendar td.tec-past .daynum{
+	color:#e5e2de;
+}
+.tec-calendar td div.tec-event {
+	position:relative;
+}
+.tec-calendar td div.daynum {
+	display:block;
+	color:#e5e2de;
+	font: normal 700 24px/24px "Lato",Arial, Helvetica, sans-serif;
+	text-align:right;
+	padding:3px 9px;
+}
+.tec-calendar td.tec-present div.daynum {
+	color:#433d33;
+}
+.tec-calendar td div.cat_Events {
+	float:left;
+	padding:0 0 0 4px;
+	margin:0;
+}
+.tec-calendar td div.cat_Events a{
+	position:relative;
+}
+.tec-calendar td div.tec-event a{
+	float:left;
+	width:12px;
+	height:12px;
+	margin:0 0 3px 0;
+	border:4px solid;
+	-webkit-border-radius: 12px;	
+	-moz-border-radius: 12px;	
+	-o-border-radius: 12px;	
+	border-radius: 12px;	
+}
+.tec-calendar td div.cat_School a{
+	border-color:#f9ebec;
+	background:#bf1e2e;
+}
+.tec-calendar td div.cat_Sports a{
+	border-color:#f5f6f0;
+	background:#909f5b;
+}
+.tec-calendar td div.cat_Music a{
+	border-color:#f9f5eb;
+	background:#bf901e;
+}
+.tec-calendar td div.cat_Open a{
+	border-color:#f9f1eb;
+	background:#bf621e;
+}
+.tec-calendar td div.cat_Other a{
+	border-color:#e9efed;
+	background:#92ada7;
+}
+.tec-calendar td div.cat_Cancelled a{
+	border-color:#e9e8e6;
+	background:#928c83;
+}
+.tec-calendar td div.cat_Admissions a{
+	border-color:#e8e2ef;
+	background:#897b9a;
+}
+.tec-calendar td div.cat_Trips a{
+	border-color:#e7e7f4;
+	background:#838fb2;
+}
+.tec-calendar td div.cat_Drama a{
+	border-color:#f2e4f1;
+	background:#bd93b9;
+}
+.tec-calendar td div.cat_Art a{
+	border-color:#efecd7;
+	background:#cdc15f;
+}
+.tec-calendar td.tec-past div a{
+	border-color:#e9e8e6 !important;
+	background:#928c83 !important;
+}
+.tec-calendar td div.tec-event a.tec-multi-event-day{
+	display:block;
+	background:none;
+	width:auto;
+	height:20px;
+	color:#e5e2de;
+	font: normal 700 22px/24px "Lato",Arial, Helvetica, sans-serif;
+	text-align:right;
+	padding:0 0 !important;
+	border:none;
+	float:none;
+	border-radius:none;
+}
+.tec-calendar td div.tec-event a.tec-multi-event-day div{
+	display:none !important;
+}
+.tec-calendar .tec-tooltip{
+	width:0;
+	height:0;
+	display:none;
+	visibility:hidden;
+}
+.tec-calendar a .tec-tooltip {
+	-webkit-box-shadow:#969696 0 0 6px;
+	-moz-box-shadow:#969696 0 0 6px;
+	-o-box-shadow:#969696 0 0 6px;
+	box-shadow:#969696 0 0 6px;
+	position:absolute;
+	z-index:1001;
+	left:-34px;
+	bottom:20px;
+	width:320px;
+	height:auto;
+	display:block;
+	visibility:visible;
+	padding:5px;
+	background-color:#fdfcfc;
+}
+.tec-tooltip .tec-arrow {
+	width:80px;
+	height:20px;
+	display:block;
+	background:url('../images/BG-calendar-tooltip-arrow.png') no-repeat center top;
+	position:absolute;
+	bottom:-20px;
+	left:0;
+}
+.tec-calendar .tec-right .tec-tooltip {
+	left:auto;
+	right:-34px;
+}
+.tec-right .tec-tooltip .tec-arrow {
+	left:auto;
+	right:0;
+}
+.tec-tooltip .tec-event-title {
+	display:block;
+	margin:0;
+	padding:10px 10px 6px 10px;
+	color:#767063;
+	font: normal normal 20px/22px "Copse", Georgia, "Times New Roman", Times, serif;
+}
+.cat_Cancelled .tec-tooltip .tec-event-title{
+	text-decoration:line-through;	
+}
+.tec-tooltip .tec-event-date {
+	display:block;
+	margin:0;
+	padding:0 0 4px 0;
+	font-size:11px;
+	color:#bcb7b1;
+}
+.tec-tooltip .tec-event-body {
+	padding:0 10px 15px 10px;
+	color:#767063;
+	font: normal 400 13px/15px "Lato", Arial, Helvetica, sans-serif;
+}
+
+/* Event Single */
+
+#tec-content{
+	width:960px;
+	padding:25px 10px;
+	margin:0 auto;
+	background:#fff;	
+	box-shadow:#d6d6ce 0 0 5px;	
+}
+#back, #back:visited{
+	float:left;
+	padding:0 15px;
+	display:block;	
+	font-size:13px;
+	color:#a8a39b;
+}
+#back:hover{
+	color:#908b80;
+}
+#tec-content h2.entry-title{
+	font-size:40px;
+	letter-spacing:-1px;
+	text-align:center;
+	padding:0;
+	margin:75px 0 -25px 0;
+	border-top:#e9e7e3 1px solid;
+	color:#767063;
+}
+#tec-content h2.entry-title span{
+	position:relative;
+	top:-25px;
+	padding:0 15px;
+	background:#fff;
+}
+#tec-content h3.entry-date{
+	position:relative;
+	width:auto;
+	text-align:center;
+	z-index:1000;
+	margin:20px 0 -13px 0;
+	text-align:center;
+	font: normal normal 18px/24px 'Josefin Slab', Georgia, 'Times New Roman', serif;
+}
+#tec-content h3.entry-date span{
+	padding:9px 18px 6px 18px;
+	margin:0 auto;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	-o-border-radius:15px;
+	border-radius:15px;
+	box-shadow:#928c83 0 0 2px;
+	color:#fff;
+}
+.events h3.entry-date span{
+	background:#928c83;
+	text-shadow:1px 1px 0 #5d5a55;
+}
+.school-events h3.entry-date span{
+	background:#bf1e2e;
+	text-shadow:1px 1px 0 #8f0c19;
+}
+.daily-bulletin h3.entry-date span{
+	background:#bf1e2e !important;
+	text-shadow:1px 1px 0 #8f0c19 !important;
+}
+.sports-events h3.entry-date span{
+	background:#909f5b;
+	text-shadow:1px 1px 0 #727f43;
+}
+.music-events h3.entry-date span{
+	background:#bf901e;
+	text-shadow:1px 1px 0 #8a6816;
+}
+.open-days h3.entry-date span{
+	background:#bf621e;
+	text-shadow:1px 1px 0 #874616;
+}
+.other h3.entry-date span{
+	background:#92ada7;
+	text-shadow:1px 1px 0 #64857e;
+}
+.admissions h3.entry-date span{
+	background:#897b9a;
+	text-shadow:1px 1px 0 #5d5a55;
+}
+.trips h3.entry-date span{
+	background:#838fb2;
+	text-shadow:1px 1px 0 #5d5a55;
+}
+.drama-events h3.entry-date span{
+	background:#bd93b9;
+	text-shadow:1px 1px 0 #a1759c;
+}
+.art-events h3.entry-date span{
+	background:#cdc15f;
+	text-shadow:1px 1px 0 #aaa050;
+}
+.past h3.entry-date span{
+	background:#928c83 !important;
+	text-shadow:1px 1px 0 #5d5a55 !important;
+}
+#event-hero{
+	display:block;
+	overflow:hidden;
+	width:960px;
+	height:280px;
+	margin:0 0 25px 0;
+	border-top:4px solid;	
+}
+.events #event-hero{
+	border-color:#dad6d1;
+}
+.school-events #event-hero{
+	border-color:#f0d1d4;
+}
+.daily-bulletin #event-hero{
+	border-color:#f0d1d4 !important;
+}
+.sports-events #event-hero{
+	border-color:#e8edd5;
+}
+.music-events #event-hero{
+	border-color:#efe1c0;
+}
+.open-days #event-hero{
+	border-color:#ecc6ac;
+}
+.other #event-hero{
+	border-color:#daebe7;
+}
+.admissions #event-hero{
+	border-color:#897b9a;
+}
+.trips #event-hero{
+	border-color:#838fb2;
+}
+.drama-events #event-hero{
+	border-color:#f2e4f1;
+}
+.art-events #event-hero{
+	border-color:#efecd7;
+}
+.tec-calendar td.tec-past div a{
+	border-color:#e9e8e6 !important;
+}
+.past #event-hero{
+	border-color:#dad6d1 !important;
+}
+#tec-content aside{
+	float:right;
+	width:285px;
+	padding:20px 20px 25px 45px;
+	border:none;
+	background: transparent url('../images/BG-event-aside.png') no-repeat top center;
+	margin:-100px 0 0 0;	
+}
+#tec-content aside #price p{
+	float:left;
+	width:115px;
+	font-size:17px;
+	line-height:21px;	
+	text-transform:uppercase;
+	font-weight:300;
+	padding:0;
+}
+#tec-content aside #price h4{
+	float:right;
+	width:155px;
+	font-size:34px;
+	padding:3px 0;
+	line-height:34px;
+	text-transform:uppercase;
+	text-align:center;
+	background: transparent url('../images/BG-event-aside-sep.png') no-repeat center left;
+}
+#tec-content aside #details h4{
+	display:block;
+	width:265px;
+	padding:3px 0;
+	text-transform:uppercase;
+	text-align:center;
+	background: none;
+	letter-spacing:3px;
+	font: normal 300 20px/34px "Lato", Arial, Helvetica, sans-serif;
+}
+#tec-content aside ul{
+	clear:both;
+	list-style:none;
+	padding:25px 0;
+	background:none;	
+	border:none;
+}
+#tec-content aside ul li{
+	padding:8px 0;
+	margin:0;
+	width:265px;
+	border:none;
+	clear:both;	
+}
+#tec-content aside ul li strong, #tec-content aside ul li p{
+	font-size:13px;
+	line-height:16px;
+	text-transform:capitalize;
+	color:#767063;
+}
+#tec-content aside ul li strong{
+	float:left;	
+	font-weight:700;
+}
+#tec-content aside ul li p{
+	float:right;
+	width:200px;
+	padding:0;
+	text-align:left;
+	font-weight:400;	
+}
+#tec-content aside a.gmap, #tec-content aside a.gmap:visited{
+	display:block;
+	width:100%;
+	text-align:center;
+	padding:10px 0;
+	margin:20px 0;
+	font-size:13px;
+	font-weight:700;
+	background:#fff;
+	border:#e3e3df 1px solid;
+	text-transform:uppercase;	
+}
+#tec-content aside a.gmap:hover{
+	color:#f9f9f7;
+	background:#7d7872;
+	border:#7d7872 1px solid;
+}
+#tec-content article{
+	float:left;
+	width:560px;
+	padding:15px 20px 15px 30px;	
+	font-size:14px;
+	text-align:justify;
+}
+#tec-content article p{
+	padding:0 0 10px 0;	
+}
+.tec_hide {
+	display:none;
+}
+.clearfix {zoom:1; /* For IE */}
+.tec-events-error {display:none;}
+.tec_hide {display:none;}
+.tec-multi-event-day {color: #0F81BB;}
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px)  {
+	#events .tec-calendar th{
+		font-size:14px;
+	}
+	.tec-calendar td div.daynum {
+		font-size: 22px;
+		padding:3px 4px;
+	}
+	#events-calendar-header{
+		height:240px;
+	}
+	#events{
+		width:98%;
+		padding: 25px 1%;
+		margin-top: 0;
+	}
+	#month-nav{
+		padding:175px 1px 1px 1px;
+		width:298px;
+		background-image:url('../images/BG-calendar-nav-thin.png');	
+	}
+	#month-nav p{
+		font-size:24px;	
+	}
+	#key{
+		width:96%;
+		margin:0 2%;
+		padding:15px 0;
+	}
+	#key li ul{
+		width:100%;	
+	}
+	#key li ul li{
+		width:50%;	
+		padding:5px 0;
+		font-size:13px;
+	}
+	#ical, #ical:visited{
+		margin-left:2%;
+	}
+	#tec-content #ical{
+		float:right;
+		margin-right:2%;	
+	}
+	#tec-content{
+		width:92%;
+		padding:20px 2% 25px 2%;
+		margin:20px 2% 0 2%;
+	}
+	.entry-content{
+		width:100%;	
+	}
+	#tec-content article{
+		width:92%;
+		padding:0 2% 25px 2%;
+		margin:0 2%;
+	}
+	#event-hero{
+		width:100%;
+		height:auto;
+	}
+	#event-hero img{
+		width:100%;
+		height:auto;
+	}
+	#tec-content h2.entry-title{
+		font-size:25px;
+		letter-spacing:0;
+		margin:75px 2% -20px 2%;
+	}
+	#tec-content h2.entry-title span{
+		top:-20px;
+	}
+	#tec-content aside{
+		float:none;
+		width:275px;
+		padding:20px 4% 0 4%;
+		margin:-55px auto -40px auto;	
+	}
+	#tec-content aside #detail h4{
+		margin:auto;	
+	}
+	#tec-content aside #price p{
+		text-align:left;
+		width:50%;
+	}
+	#tec-content aside #price h4{
+		float:right;
+		width:50%;
+	
+	}
+	#tec-content aside ul{
+		padding:0 0 25px 0;
+	}
+	#tec-content .entry{
+		width:100%;
+		clear:both;
+		padding-top:15px;	
+	}
+}

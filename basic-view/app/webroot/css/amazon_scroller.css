@@ -1,0 +1,54 @@
+.amazon_scroller{
+    padding: 0px;
+	margin-top:-5px;
+
+	
+	
+	
+}
+.amazon_scroller .amazon_scroller_nav{
+    position: absolute;
+}
+.amazon_scroller .amazon_scroller_nav li{
+    cursor: pointer;
+    position: absolute;
+}
+.amazon_scroller .amazon_scroller_mask{
+	position: absolute;
+	margin-left: 30px;
+	margin-right: 10px;
+	overflow: hidden;
+	width:750px;
+	left: 0px;
+
+
+}
+.amazon_scroller ul{
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.amazon_scroller ul li{
+    padding-left: 7px;
+    margin: 0px;
+
+
+
+  
+    list-style: none;
+    float: left;
+    text-align: center;
+    display:inline;
+}
+.amazon_scroller ul li a{
+    text-decoration: none;
+}
+.amazon_scroller ul li a amazon_scroller_title{
+	overflow:hidden;
+}
+.amazon_scroller ul li a:hover{
+    text-decoration: underline;
+}
+.amazon_scroller ul li a img{
+    border: none;
+}

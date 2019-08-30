@@ -1,0 +1,87 @@
+<?php   $ResAmount =   $_GET['amount']; ?>
+<?php   $trans_id  = $_GET['transaction_id'];?>
+<?php   $order_id  = $_GET['order_id'];?>
+<?php          
+                include("login.php");
+                $rs=mysql_query($sql="select * from transaction_detail where order_id  = '$order_id' and amount = $ResAmount")or die(mysql_error());
+				          $nrr=mysql_num_rows($rs);
+				        if($nrr > 0)
+			             {	
+			             
+			$db_hostname = 'localhost';
+			$db_database = 'wwwbgis_admin';
+			$db_username = 'wwwbgis_admin';
+			$db_password = '_?_I}tgRUv9{';
+			
+			// Connect to server.
+			$db_server = mysql_connect($db_hostname, $db_username, $db_password)
+			    or die("Unable to connect to MySQL: " . mysql_error());
+				
+			// Select the database.
+			mysql_select_db($db_database)
+			    or die("Unable to select database: " . mysql_error());
+			                		             
+						      $pmtarr = mysql_fetch_array($rs);
+						      $pmt_orderId = $pmtarr['order_id'];   
+						      $tracking_id = $pmtarr['tracking_id'];  
+						      $order_status = $pmtarr['order_status']; 
+	  $rs1=mysql_query($sql="UPDATE donation SET payment_status = 'Approved' WHERE id = '".$pmt_orderId."' ");
+ $rs5=mysql_query($sql="insert into transaction(user_id,transaction_id,status,created) values('$order_id','$trans_id','Approved',now())")or die(mysql_error());	  				      
+	        $to = 'mansi@maatti.com';
+		$EmailSubject = 'BGIS | Transaction Detail Of Donor '; 
+		$mailheader = "From: info@bgis.org \r\n"; 
+		$mailheader .= "CC: newbgis@gmail.com \r\n";
+		$mailheader .= "Reply-To: info@bgis.org \r\n";
+		$mailheader .= 'MIME-Version: 1.0' . "\r\n"; 
+		$mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+      $MESSAGE =' <html><head><title>Transaction Detail </title></head><body><div class="main_enhance" style="width:614px;border:10px; solid #f8f8f8;"><div class="container" style="background:#f8f8f8; padding:10px;"><h1 style="font-family: Arial, Helvetica, sans-serif;font-size:20px;color:#000;">Transaction Detail of Order Id '.$pmt_orderId.'</h1><br/><label style="margin: auto; position:relative; font-size:14px;"><b>Order Id : </b></label>'.$pmt_orderId.'<br/><br/><label style="margin: auto; position:relative; font-size:14px;"><b>Tracking Id :</b></label>'.$tracking_id.'<br/><br/><label style="margin: auto; position:relative; font-size:14px;"><b>Status : </b></label>'.$order_status.'<br/><br/><label style="margin: auto; position:relative; font-size:14px;"><b>Amount:</b></label>'.$ResAmount.'<br/> </div><div class="regard" style="font-family:Arial, Helvetica, sans-serif; color: #000; font-size:14px; line-height:160%; margin-left:10px; margin-top:15px;"> Warm Regards<br />BGIS Team <br /></div></body></html>';
+        	             @mail( $to, $EmailSubject, $MESSAGE, $mailheader);		  
+		                     }		          
+				     ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Thanking You</title><body>
+</head>
+
+<div class="body" style="background:#fff; width:510px; margin:auto ;">
+
+<div class="wrapper" style="background:#fff; width:510px; margin:auto 0px ;">
+<div class=" pro_main"> 
+		<div class="hd7" style="background:# F2F2F2; border: 2px solid #999" > 
+        
+        <div class="hd7"   style="font-size:54px; padding:10px 30px 0px  150px; color:#C00 ; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;  " > <strong>  Success</strong></div>
+               <div class="pro_left">
+             <p  style="font-size:17px;  color: #3E86AC; text-align:center; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;  ">"Dear Customer, Thank you for Donating ISCKON School Project. Your credit card has been charged and your transaction is successful. We will be shipping your 80G certificate to you soon.";</p>
+<p style="font-size:20px; text-align:center; background:#F2F2F2;  font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; color:#393 ">Your transaction details are mentioned below.</p>   
+
+                 <table width="100%" border="1"  style="font-size:17px;  color: #3E86AC;  font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;  ">
+				                
+                  <tr>
+				                    <td width="50%">&nbsp;Transaction ID</td>
+				                    <td>&nbsp;<?php echo $tracking_id; ?></td>
+                  </tr>
+                  <tr>
+                    <td width="50%">&nbsp;Transaction Status </td>
+                    <td>&nbsp;<?php echo $order_status; ?></td>
+                  </tr>
+                  <tr>
+                    <td width="50%">&nbsp;Paid Amount Rs.</td>
+                    <td>&nbsp;<?php echo $ResAmount; ?></td>
+                  </tr>
+                </table>
+         
+         </div>
+          <div class="clr"></div>
+<!--pro_main end here-->          
+</div>
+<!--pro_main end here-->
+<div class="spacer35"></div>
+<div class="clr"></div>
+<!--wrapper end here-->
+</div></div>
+<!--wrapper end here--></div>
+</body>
+</html>
