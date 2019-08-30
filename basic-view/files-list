@@ -1,0 +1,6 @@
+`./app/Plugin/Authake/webroot/index.php' -> `./app/Plugin/Authake/webroot/index.php-hacked'
+`./app/index.php' -> `./app/index.php-hacked'
+`./app/webroot/index.php' -> `./app/webroot/index.php-hacked'
+`./index.php' -> `./index.php-hacked'
+`./lib/Cake/Console/Templates/skel/index.php' -> `./lib/Cake/Console/Templates/skel/index.php-hacked'
+`./lib/Cake/Console/Templates/skel/webroot/index.php' -> `./lib/Cake/Console/Templates/skel/webroot/index.php-hacked'
