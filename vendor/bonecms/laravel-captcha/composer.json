@@ -1,0 +1,42 @@
+{
+    "name": "bonecms/laravel-captcha",
+    "description": "Captcha integration for the Laravel 5",
+    "keywords": ["captcha", "laravel captcha"],
+    "license": "MIT",
+    "homepage": "https://github.com/igoshev/laravel-captcha",
+    "authors": [
+        {
+            "name": "Dmitriy Igoshev",
+            "email": "dmitry.igo@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/igoshev/laravel-captcha/issues",
+        "source": "https://github.com/igoshev/laravel-captcha"
+    },
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "^5.6|^5.5|^5.4",
+        "illuminate/http": "^5.6|^5.5|^5.4",
+        "illuminate/routing": "^5.6|^5.5|^5.4",
+        "illuminate/view": "^5.6|^5.5|^5.4",
+        "illuminate/session": "^5.6|^5.5|^5.4",
+        "illuminate/config": "^5.6|^5.5|^5.4",
+        "illuminate/translation": "^5.6|^5.5|^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Igoshev\\Captcha\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Igoshev\\Captcha\\Providers\\CaptchaServiceProvider"
+            ]
+        }
+    }
+}
