@@ -40,11 +40,12 @@ class ImageController extends Controller
         return redirect('/admin/pages/'.$page->id.'')->with('flash_message', 'Image Added Successfully');
     }
 
-    public function edit($id)
+    public function edit($page_id ,$id)
     {
         $image = Image::find($id);
         return view('admin.seo.imageEdit',[
             'image' => $image,
+            'page' => $page_id,
         ]);
     }
     public function update(Request $request, $id)
@@ -87,3 +88,4 @@ class ImageController extends Controller
         return -1;
     }
 }
+

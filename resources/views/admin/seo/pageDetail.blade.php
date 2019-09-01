@@ -66,7 +66,7 @@
                 <td>{{ $image->alt }}</td>
                 <td>{{ $image->title }}</td>
                 <td>
-                    <a href="/admin/image/{{ $image->id }}/edit" class="btn btn-info " style="margin-right: 3px;">Edit</a>
+                    <a href="/admin/pages/{{ $page->id }}/image/{{ $image->id }}/edit" class="btn btn-info " style="margin-right: 3px;">Edit</a>
                 </td>
             </tr>
             @endforeach
@@ -78,3 +78,4 @@
 </div>
 
 @endsection
+

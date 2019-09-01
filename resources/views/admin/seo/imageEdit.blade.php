@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <form method="POST" action="/admin/image/{{ $image->id }}" enctype="multipart/form-data">
+    <form method="POST" action="/admin/pages/{{ $page }}/image/{{ $image->id }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="form-group">
@@ -37,3 +37,4 @@
 
     </form>
 @endsection
+
