@@ -1,13 +1,23 @@
 @extends('admin.layout')
 
+
+@section('script')
+    @if(Session::has('flash_message'))
+        @if(Session::get('flash_message')=="Update image path Successfully")
+           alert(" {{Session::get('flash_message')}}")
+        @endif
+    @endif
+@endsection
+
+
 @section('body')
 <h1><i class="fa fa-info-circle" aria-hidden="true"></i> Page Detail</h1>
-
-    @if (session('message'))
+    @if(Session::has('flash_message'))
         <div class="w3-panel w3-green">
-            <p>Your Changes have been successfully submitted!</p>
+            {{Session::get('flash_message')}}
         </div>
     @endif
+
 <div class="row">
     <h3> <i class="fa fa-key" aria-hidden="true"></i> Meta Tags:</h3>
     <div class="table-responsive">

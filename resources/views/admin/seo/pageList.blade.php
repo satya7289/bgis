@@ -21,7 +21,6 @@
             <tr>
                 <th>Page</th>
                 <th>Title</th>
-                <th>Url</th>
                 <th>Keyword</th>
                 <th>Action</th>
 
@@ -34,7 +33,6 @@
 
                     <td>{{ $page->name }}</td>
                     <td>{{ $page->title }}</td>
-                    <td>{{ $page->url }}</td>
                     <td>{{ $page->keyword }}</td>
                     <td>
                         <a href="/admin/pages/{{ $page->id }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
@@ -51,3 +49,4 @@
 
 
 @endsection
+

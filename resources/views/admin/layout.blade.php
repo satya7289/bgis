@@ -278,5 +278,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- Bootstrap Core JavaScript -->
    <script src="{{ asset('js/bootstrap.js') }}"> </script>
 
+<script>@yield('script')</script>
+
 </body>
 </html>
+

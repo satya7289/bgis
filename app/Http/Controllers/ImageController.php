@@ -48,17 +48,21 @@ class ImageController extends Controller
             'page' => $page_id,
         ]);
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $page_id)
     {
-        $i = Image::find($id);
+        $message = "Update images tags Successfully";
+        $i = Image::find($page_id);
+        $previous_path = $i->path;
         $i->title = request('title');
         $i->path = request('path');
         $i->alt = request('alt');
-//        dd($i->title);
+        //    dd($i,$id,$page_id);
         $page = $i->page;
         $page->image()->save($i);
+        if($previous_path!=request('path'))
+            $message = "Update image path Successfully";
 
-        return redirect('/admin/pages/'.$page->id.'')->with('message','Success');
+        return redirect('/admin/pages/'.$page->id.'')->with('flash_message', $message);
 
     }
 
